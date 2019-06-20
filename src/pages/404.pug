@@ -1,0 +1,50 @@
+extends ../pug/layout.pug
+
+block meta
+  title Page 404
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block nav
+  //- +main-nav('-1')
+
+block content
+  +not-found()
+    .not-found__main
+      h1.not-found__title 404
+      .not-found__subtitle Извините! Такой страницы не существует ...
+      .not-found__text Страница была удалена или адрес оказался неправильным.
+    .not-found__info
+      .not-found__info-title Попробуйте следующее:
+      ul.not-found__list
+          li.not-found__list-item
+            .not-found__image
+              svg.not-found__image-svg(width='40', height='44'): use(xlink:href='img/sprite.svg#icon-home')
+            a.not-found__link(href='/')
+              svg.not-found__icon-svg(width='12', height='12'): use(xlink:href='img/sprite.svg#icon-back')
+              | Вернуться на Главную
+          li.not-found__list-item
+            .not-found__image
+              .not-found__image-wrap
+                svg.not-found__image-svg(width='30', height='30'): use(xlink:href='img/sprite.svg#icon-arrow_left')
+            .not-found__list-text Нажмите кнопку «Назад» в&nbsp;браузере и уточните, куда&nbsp;вам надо
+          li.not-found__list-item
+            .not-found__image
+              .not-found__image-text avtozvuk.ua/el
+                svg.not-found__icon-cursor(width='16', height='16'): use(xlink:href='img/sprite.svg#icon-cursor')
+            .not-found__list-text Проверьте, нет ли опечаток в&nbsp;адреснйо строке
+  +feedback()
+      .feedback__info
+        b.feedback__title Ничего не помогло?
+        .feedback__text Закажите обратный звонок и мы свяжемся с вами
+      .feedback__wrap
+        +btn('Обратный звонок').feedback__btn-call
+
+
+//- block footer
+//-   p footer
+
+//- block append page-bottom
+//-   script(src='js/some.js')

@@ -1,0 +1,13 @@
+// В этом файле должны быть стили для БЭМ-блока container, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.container {
+
+  $block-name:                &; // #{$block-name}__element
+  display: block;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 30px;
+}

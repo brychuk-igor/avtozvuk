@@ -1,0 +1,90 @@
+// В этом файле должны быть стили для БЭМ-блока btn, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.btn {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0;
+  border: 0;
+  padding: 16px 45px;
+  // border-radius: $border-radius;
+  // border: 1px solid $gray-lighter;
+  // padding: $field-padding-vertical  $field-padding-horizontal;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  text-align: center;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: $line-height;
+  text-decoration: none;
+  text-transform: none;
+  color: $text-color;
+  background-color: #ffdc2c;
+  background-image: none;
+  cursor: pointer;
+  outline: 0;
+  transition: 0.3s box-shadow ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+    color: $text-color;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
+    // background-color: darken(#ffdc2c, 10%);
+    // border-color: darken($gray-lighter, 12%);
+  }
+
+  // &:visited {
+  //   color: $text-color;
+  // }
+
+  // &:active,
+  // &:focus {
+  //   @include field-focus;
+  // }
+
+  &--disabled,
+  &:disabled {
+    opacity: $opacity;
+    cursor: not-allowed;
+    color: $text-color;
+    background-color: $gray-lightest;
+    // border-color: $gray-lighter;
+
+    @at-root a.btn--disabled {
+      pointer-events: none;
+    }
+  }
+
+  // &__icon {
+  //   display: inline-block;
+  //   vertical-align: middle;
+  // }
+
+
+
+  // &--main {
+  //   color: #fff;
+  //   background-color: $color-main;
+  //   // border: 1px solid $color-main;
+
+  //   &:hover,
+  //   &:focus {
+  //     color: #fff;
+  //     background-color: darken($color-main, 10%);
+  //     // border-color: darken($color-main, 12%);
+  //   }
+
+  //   &--disabled,
+  //   &:disabled {
+  //     color: #fff;
+  //     background-color: $color-main;
+  //     // border-color: $color-main;
+  //   }
+  // }
+}

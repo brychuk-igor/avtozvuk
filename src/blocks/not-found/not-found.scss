@@ -1,0 +1,167 @@
+// В этом файле должны быть стили для БЭМ-блока not-found, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.not-found {
+
+  $block-name:                &; // #{$block-name}__element
+  padding: 50px 0;
+
+  @media (min-width: $screen-md) {
+    padding: 100px 0;
+  }
+
+  &__main {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 106px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #777777;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #555555;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    color: #333333;
+  }
+
+  &__info {
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &__info-title {
+    margin-bottom: 25px;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #333333;
+  }
+
+  &__list {
+    margin: 0;
+    margin-bottom: -40px;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: center;
+      margin: 0 -50px;
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-md) {
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+  }
+
+  &__list-text {
+    max-width: 205px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.2;
+    text-align: center;
+    color: #333333;
+  }
+
+  &__link {
+    position: relative;
+    padding-left: 15px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #333333;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: -5px;
+      left: 15px;
+      height: 1px;
+      background-color: #c2c2c2;
+      transition: 0.3s background-color ease-in-out;
+    }
+
+    &:hover {
+      color: #fc2539;
+    }
+
+    &:hover::before {
+      background-color: #fc2539;
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin-bottom: 15px;
+  }
+
+  &__image-svg {
+    fill: #fc2539;
+  }
+
+  &__image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fc2539;
+    border-radius: 5px;
+    padding: 5px 25px;
+  }
+
+  &__image-text {
+    position: relative;
+    padding-right: 20px;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.8pt;
+    white-space: nowrap;
+    color: #fc2539;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: calc(100% - 20px);
+      width: 1px;
+      height: 100%;
+      background-color: #99999b;
+    }
+  }
+
+  &__icon-svg {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: #fc2539;
+  }
+
+  &__icon-cursor {
+    position: absolute;
+    top: 15px;
+    right: -3px;
+  }
+}
